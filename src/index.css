@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 84% 70%;
+
+    --card: 0 50% 4%;
+    --card-foreground: 0 84% 85%;
+
+    --popover: 0 50% 4%;
+    --popover-foreground: 0 84% 85%;
+
+    --primary: 0 100% 60%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 30% 8%;
+    --secondary-foreground: 0 84% 70%;
+
+    --muted: 0 20% 10%;
+    --muted-foreground: 0 30% 50%;
+
+    --accent: 350 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 90% 55%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 0 84% 20%;
+    --input: 0 50% 8%;
+    --ring: 0 100% 60%;
+
+    --success: 120 100% 35%;
+    --success-foreground: 0 0% 0%;
+
+    --warning: 35 100% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --cyber-red: 0 100% 60%;
+    --cyber-dark: 0 50% 3%;
+    --matrix-green: 120 100% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(0, 100%, 60%), hsl(0, 84%, 45%));
+    --gradient-cyber: linear-gradient(135deg, hsl(0, 100%, 60%), hsl(0, 50%, 15%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 50%, 4%), hsl(0, 30%, 8%));
+    --gradient-matrix: linear-gradient(180deg, hsl(0, 50%, 3%), hsl(120, 50%, 5%));
+
+    --shadow-glow: 0 0 50px hsl(0 100% 60% / 0.6);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.8);
+    --shadow-cyber: 0 0 80px hsl(0 100% 60% / 0.4);
+    --shadow-matrix: 0 0 30px hsl(120 100% 50% / 0.3);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 0 100% 75%;
+
+    --card: 0 60% 3%;
+    --card-foreground: 0 100% 80%;
+
+    --popover: 0 60% 3%;
+    --popover-foreground: 0 100% 80%;
+
+    --primary: 0 100% 65%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 40% 6%;
+    --secondary-foreground: 0 100% 70%;
+
+    --muted: 0 30% 8%;
+    --muted-foreground: 0 50% 40%;
+
+    --accent: 350 100% 55%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 0 100% 25%;
+    --input: 0 60% 6%;
+    --ring: 0 100% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(0 100% 60% / 0.12) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, hsl(120 100% 50% / 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 40% 40%, hsl(0 50% 3% / 0.9) 0%, transparent 70%),
+      linear-gradient(135deg, hsl(0 0% 0% / 0.95) 0%, hsl(0 50% 3% / 0.98) 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(0 100% 60% / 0.5) hsl(0 50% 8%);
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: hsl(0 50% 8%);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: hsl(0 100% 60% / 0.5);
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 100% 60% / 0.7);
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: matrix-rain 20s linear infinite;
+  }
+
+  .text-shadow-neon {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+
+  .text-shadow-cyber {
+    text-shadow: 0 0 10px hsl(0 100% 60% / 1), 0 0 20px hsl(0 100% 60% / 0.8), 0 0 30px hsl(0 100% 60% / 0.6);
+  }
+  
+  .matrix-bg {
+    background: linear-gradient(0deg, transparent 24%, rgba(255, 0, 0, 0.05) 25%, rgba(255, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 0, 0.05) 75%, rgba(255, 0, 0, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 0, 0, 0.05) 25%, rgba(255, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 0, 0.05) 75%, rgba(255, 0, 0, 0.05) 76%, transparent 77%, transparent);
+    background-size: 30px 30px;
+  }
+  
+  .glow-border {
+    border: 1px solid hsl(0 100% 60% / 0.5);
+    box-shadow: 0 0 20px hsl(0 100% 60% / 0.3), inset 0 0 20px hsl(0 100% 60% / 0.1);
+  }
+}
