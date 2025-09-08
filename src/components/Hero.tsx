@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Zap, Users, Star, ArrowRight, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroGlobe from "@/assets/hero-globe.jpg";
 import AnimatedGlobe from "./AnimatedGlobe";
 import TrustBadges from "./TrustBadges";
 
@@ -11,11 +10,7 @@ const Hero = () => {
     <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img 
-          src={heroGlobe} 
-          alt="High-tech globe background" 
-          className="w-full h-full object-cover opacity-15"
-        />
+        <div className="w-full h-full bg-gradient-to-br from-background via-background/95 to-background opacity-90" />
         <AnimatedGlobe />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background/95" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/30 to-background/60" />

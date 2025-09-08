@@ -4,8 +4,6 @@ import { ShoppingCart, User, Shield, Coins, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { useState } from "react";
-import reaperLogo from "@/assets/reapercards-logo.png";
-
 const Header = () => {
   const { getItemCount } = useCart();
   const itemCount = getItemCount();
@@ -18,11 +16,9 @@ const Header = () => {
           {/* Logo Section */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="flex items-center space-x-3">
-              <img 
-                src={reaperLogo} 
-                alt="REAPERCARDS" 
-                className="h-10 w-auto transition-transform group-hover:scale-105" 
-              />
+              <div className="h-10 w-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <Coins className="h-6 w-6 text-black" />
+              </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                   REAPERCARDS
