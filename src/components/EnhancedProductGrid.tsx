@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingCart } from "lucide-react";
-import ProductCarousel from "./ProductCarousel";
+import MobileProductCarousel from "./MobileProductCarousel";
 
 const EnhancedProductGrid = () => {
   return (
@@ -21,7 +21,7 @@ const EnhancedProductGrid = () => {
         </div>
 
         {/* Product Carousel */}
-        <ProductCarousel />
+        <MobileProductCarousel />
 
         {/* View All Products Button */}
         <div className="text-center mt-16">
