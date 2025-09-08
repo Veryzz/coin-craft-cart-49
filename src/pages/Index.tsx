@@ -14,13 +14,8 @@ import FloatingWidgets from "@/components/FloatingWidgets";
 import MatrixRain from "@/components/MatrixRain";
 
 const Index = () => {
-  console.log("Index component is rendering");
-  
   return (
     <div className="min-h-screen bg-background animate-fade-in relative">
-      <div style={{position: 'fixed', top: 0, left: 0, color: 'white', background: 'red', padding: '10px', zIndex: 9999}}>
-        DEBUG: Index component loaded
-      </div>
       <MatrixRain />
       <Header />
       <Hero />
